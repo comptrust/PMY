@@ -1,0 +1,6 @@
+{
+  "name": "Groupe Scolaire Présentation de Marie - Yoff",
+  "description": "Site officiel de l'Institution & Préscolaire Présentation de Marie de Yoff (Dakar, Sénégal) - Crèche, Maternelle et École Élémentaire. Établissement privé catholique sous tutelle de la Congrégation des Sœurs de la Présentation de Marie.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
