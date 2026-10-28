@@ -135,7 +135,7 @@ export const ContactLocation: React.FC = () => {
               <div className="grid grid-cols-2 gap-3">
                 <div className="space-y-1">
                   <img
-                    src="/assets/aistudio/image_4c23f959.png"
+                    src="./assets/aistudio/image_4c23f959.png"
                     alt="Portail réel d'entrée avec enseigne ONECS"
                     className="w-full h-28 object-cover rounded-lg border border-stone-300"
                   />
@@ -145,7 +145,7 @@ export const ContactLocation: React.FC = () => {
                 </div>
                 <div className="space-y-1">
                   <img
-                    src="/assets/aistudio/image_3524fbd5.png"
+                    src="./assets/aistudio/image_3524fbd5.png"
                     alt="Cour intérieure et portail aux 3 croix"
                     className="w-full h-28 object-cover rounded-lg border border-stone-300"
                   />

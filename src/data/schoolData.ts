@@ -55,8 +55,8 @@ export const SCHOOL_VERIFIED_INFO = {
   website: 'www.presentationdemarie.com',
   mottoOfficial: '« Soyons un Évangile ouvert » — Sainte Marie Rivier',
   mottoPedagogique: '« Mettons-nous ensemble et nous ferons l\'école »',
-  photoGate: '/assets/aistudio/image_4c23f959.png',
-  photoCourtyard: '/assets/aistudio/image_3524fbd5.png',
+  photoGate: './assets/aistudio/image_4c23f959.png',
+  photoCourtyard: './assets/aistudio/image_3524fbd5.png',
 };
 
 export interface FeeDetailItem {

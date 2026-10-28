@@ -49,7 +49,7 @@ export const Hero: React.FC<HeroProps> = ({
   const slides: BannerSlide[] = [
     {
       id: 'gate',
-      imageSrc: '/assets/aistudio/image_4c23f959.png',
+      imageSrc: './assets/aistudio/image_4c23f959.png',
       badgeFr: 'OFFICE NATIONAL DE L’ENSEIGNEMENT CATHOLIQUE DU SÉNÉGAL (ONECS)',
       badgeEn: 'NATIONAL OFFICE OF CATHOLIC EDUCATION OF SENEGAL (ONECS)',
       titleFr: 'Grandir et apprendre ensemble',
@@ -67,7 +67,7 @@ export const Hero: React.FC<HeroProps> = ({
     },
     {
       id: 'courtyard',
-      imageSrc: '/assets/aistudio/image_3524fbd5.png',
+      imageSrc: './assets/aistudio/image_3524fbd5.png',
       badgeFr: 'CADRE SÉCURISÉ & BIENVEILLANT · YOFF AÉROPORT',
       badgeEn: 'SECURE & CARING ENVIRONMENT · YOFF AIRPORT',
       titleFr: 'Cour d’Honneur & Bâtiments',

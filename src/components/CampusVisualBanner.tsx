@@ -25,7 +25,7 @@ export const CAMPUS_PHOTOS: CampusImage[] = [
     accentColor: '#38BDF8',
     description: 'Le portail historique bleu aux monogrammes forgés « PM » surmonté de l\'enseigne de l\'Office National de l\'Enseignement Catholique du Sénégal et de la plaque commémorative « Soyons un Évangile ouvert » de Sainte Marie Rivier.',
     svgScene: 'courtyard',
-    imageSrc: '/assets/aistudio/image_4c23f959.png',
+    imageSrc: './assets/aistudio/image_4c23f959.png',
   },
   {
     id: 'photo-2',
@@ -37,7 +37,7 @@ export const CAMPUS_PHOTOS: CampusImage[] = [
     accentColor: '#34D399',
     description: 'Vue sur la cour arborée avec les acacias et le grand sapin, le portail bleu orné des trois croix blanches chrétiennes et le bâtiment d\'enseignement à étage où se déroulent les cours.',
     svgScene: 'courtyard',
-    imageSrc: '/assets/aistudio/image_3524fbd5.png',
+    imageSrc: './assets/aistudio/image_3524fbd5.png',
   },
   {
     id: 'photo-3',

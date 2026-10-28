@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>Groupe Scolaire Présentation de Marie - Yoff</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+      // Single Page App redirect for GitHub Pages
+      (function() {
+        var path = window.location.pathname;
+        var segments = path.split('/').filter(Boolean);
+        // On GitHub Pages, segments[0] is typically the repository name
+        if (segments.length > 0) {
+          var repo = segments[0];
+          var route = segments.slice(1).join('/');
+          if (route && route !== 'index.html') {
+            window.location.replace('/' + repo + '/#/' + route + window.location.search);
+            return;
+          }
+        }
+        window.location.replace('./' + window.location.search);
+      })();
+    </script>
+  </head>
+  <body style="font-family: sans-serif; text-align: center; padding: 40px; color: #0F294A; background: #FAF8F5;">
+    <h2>Groupe Scolaire Présentation de Marie - Yoff</h2>
+    <p>Redirection vers la page demandée...</p>
+    <p><a href="./" style="color: #0284C7;">Cliquez ici si la redirection ne se fait pas automatiquement</a></p>
+  </body>
+</html>

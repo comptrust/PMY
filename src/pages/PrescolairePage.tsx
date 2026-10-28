@@ -36,7 +36,7 @@ export const PrescolairePage: React.FC<PrescolairePageProps> = ({
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#FAF8F5] border border-stone-200 rounded-xl p-5 sm:p-6">
             <div className="lg:col-span-5 relative rounded-xl overflow-hidden border border-stone-300 shadow-sm group">
               <img
-                src="/assets/aistudio/image_4c23f959.png"
+                src="./assets/aistudio/image_4c23f959.png"
                 alt="Portail d'entrée officiel du Préscolaire Présentation de Marie de Yoff"
                 className="w-full h-56 sm:h-64 object-cover object-center group-hover:scale-102 transition-transform duration-300"
                 loading="eager"
