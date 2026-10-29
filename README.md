@@ -1,35 +1,74 @@
-# Groupe Scolaire Présentation de Marie - Yoff (Dakar)
+# Groupe Scolaire Présentation de Marie — Yoff (Dakar)
 
-Site web officiel bilingue (Français / Anglais) pour le **Groupe Scolaire Présentation de Marie de Yoff** (Crèche, Maternelle, Préscolaire et École Élémentaire).
-
----
-
-## 🚀 Déploiement sur GitHub Pages (Solution pour l'écran blanc)
-
-### Pourquoi la page s'affichait blanche ?
-Par défaut, Vite génère des chemins absolus (`/assets/index.js`) qui cherchent les fichiers à la racine du domaine (`https://<username>.github.io/assets/...`) au lieu du sous-dossier du dépôt GitHub (`https://<username>.github.io/<nom-du-repo>/assets/...`), provoquant des erreurs 404 sur les fichiers JS et CSS.
-
-### Correctifs appliqués :
-1. **Chemins relatifs configurés (`base: './'`)** dans `vite.config.ts` : les fichiers et scripts sont maintenant chargés relativement (`./assets/...`), fonctionnant à la fois sur la racine ou sur un sous-dossier GitHub Pages.
-2. **Fichier `.nojekyll`** ajouté dans `public/` : empêche GitHub d'exécuter le moteur Jekyll qui bloquait certains dossiers et scripts.
-3. **Fichier `404.html`** ajouté dans `public/` : gère les redirections SPA automatiques pour que recharger la page ou accéder à un lien ne provoque pas d'erreur 404.
-4. **Workflow automatique GitHub Actions (`.github/workflows/deploy.yml`)** : compile et déploie automatiquement le site à chaque push sur `main` ou `master`.
+Site web officiel bilingue (Français / Anglais) pour le **Groupe Scolaire Présentation de Marie de Yoff** (Crèche, Maternelle, Préscolaire et École Élémentaire du CP au CM2).
 
 ---
 
-## ⚙️ Comment activer GitHub Pages sur votre dépôt GitHub
+## 🚀 Résolution Définitive de l'Écran Blanc sur GitHub Pages
 
-1. Allez sur votre dépôt GitHub.
-2. Cliquez sur l'onglet **Settings** (Paramètres) > **Pages** (dans le menu de gauche).
-3. Dans la section **Build and deployment** :
-   - **Source** : Sélectionnez **GitHub Actions**.
-4. Le workflow inclus dans `.github/workflows/deploy.yml` va automatiquement compiler le projet et publier le site.
-5. Votre site sera accessible à : `https://<votre-compte>.github.io/<nom-du-repo>/` sans aucun écran blanc !
+### Pourquoi l'écran s'affichait blanc ?
+Il y a deux causes principales pour l'écran blanc sur GitHub Pages avec un projet React/Vite :
+1. **Source mal configurée dans GitHub Pages** : Si GitHub Pages est laissé sur l'option par défaut *"Deploy from a branch"* avec le dossier racine `/`, GitHub sert le fichier `index.html` brut qui essaie de charger `/src/main.tsx`. Or, un navigateur ne peut pas exécuter du code TypeScript/JSX brut sans compilation.
+2. **Chemins absolus des scripts et styles** : Par défaut, Vite génère `/assets/...` au lieu de chemins relatifs, ce qui échoue lorsque le site est hébergé dans un sous-dossier comme `https://<nom-utilisateur>.github.io/<nom-du-depot>/`.
 
 ---
 
-## 🛠️ Commandes locales
+### Solution en 1 clic sur GitHub (Recommandée) :
 
-- `npm install` : Installer les dépendances
-- `npm run dev` : Lancer le serveur de développement local (port 3000)
-- `npm run build` : Compiler pour la production (dans le dossier `dist/`)
+1. Ouvrez votre dépôt sur **GitHub.com**.
+2. Cliquez sur l'onglet **Settings** (Paramètres) en haut.
+3. Dans la colonne de gauche, cliquez sur **Pages**.
+4. Sous la section **Build and deployment** :
+   - Dans le menu déroulant **Source**, changez *"Deploy from a branch"* pour sélectionner **GitHub Actions**.
+5. C'est tout ! Le workflow automatique déjà configuré dans `.github/workflows/deploy.yml` va compiler automatiquement le code TypeScript et déployer le dossier `dist/`.
+6. Dès la fin de l'action (1 à 2 minutes), votre site s'affiche parfaitement à l'adresse fournie par GitHub.
+
+---
+
+### Alternative : Si vous préférez déployer depuis une branche (sans GitHub Actions)
+
+1. Exécutez localement :
+   ```bash
+   npm run build
+   ```
+2. Dans GitHub **Settings > Pages > Source** :
+   - Choisissez **Deploy from a branch**.
+   - Sélectionnez la branche contenant le dossier compilé (`gh-pages` ou dossier `/dist`).
+
+---
+
+### Protections intégrées dans le code contre l'écran blanc :
+- **Configuration `base: './'`** dans `vite.config.ts` : tous les chemins d'assets sont relatifs (`./assets/...`).
+- **Composant `ErrorBoundary`** dans `src/components/ErrorBoundary.tsx` : intercepte toute exception JavaScript et affiche une interface de récupération au lieu d'un écran blanc.
+- **Diagnostic et conteneur visuel dans `index.html`** : affiche un conteneur stylisé aux couleurs de l'école avec message explicatif en cas d'erreur de chargement.
+- **Fichier `404.html`** dans `public/` : gestion automatique des redirections d'URL SPA.
+- **Fichier `.nojekyll`** dans `public/` : désactivation de Jekyll sur GitHub Pages.
+
+---
+
+## 📚 Ressources Scolaires Incluses sur le Site
+
+- **Listes des Fournitures 2026–2027** : Maternelle, Crèche et Élémentaire (CP, CE1, CE2, CM1, CM2) avec partenariat Librairie Clairafrique & Saint-Paul.
+- **Guide Schoolmatik & Paiements** : Règlement des mensualités via Wave (0% frais), Orange Money et virement bancaire.
+- **Calendrier Académique Officiel** : Rentrée, compositions, congés et examens du CFEE.
+- **Règlement Intérieur & Charte de Vie Scolaire** : Code vestimentaire (uniforme bleu marine et blanc), fermeture des grilles à 07h45, et discipline.
+- **Menu de la Cantine Scolaire** : Repas 100% Halal cuisinés sur place chaque jour.
+- **Annales & Fiches de Révision CFEE** : Préparation au taux de réussite historique de 100%.
+
+---
+
+## 🛠️ Commandes Locales
+
+```bash
+# Installer les dépendances
+npm install
+
+# Démarrer le serveur de développement (port 3000)
+npm run dev
+
+# Compiler le site pour la production
+npm run build
+
+# Prévisualiser la version de production localement
+npm run preview
+```

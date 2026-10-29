@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="fr" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Groupe Scolaire Présentation de Marie - Yoff | Crèche, Maternelle & Élémentaire Dakar</title>
-    <meta name="description" content="Site officiel du Groupe Scolaire Présentation de Marie de Yoff (Dakar, Sénégal) - Crèche, Maternelle, Préscolaire et École Élémentaire. Excellence académique et esprit de famille." />
+    <meta name="description" content="Site officiel du Groupe Scolaire Présentation de Marie de Yoff (Dakar, Sénégal) - Crèche, Maternelle, Préscolaire et École Élémentaire. Excellence académique, esprit de famille et réussite au CFEE." />
     <meta property="og:title" content="Groupe Scolaire Présentation de Marie - Yoff | Dakar" />
     <meta property="og:description" content="Institution privée catholique sous tutelle de la Congrégation des Sœurs de la Présentation de Marie. Crèche, Maternelle et École Élémentaire." />
     <meta property="og:type" content="website" />
@@ -13,8 +13,47 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
   </head>
-  <body class="bg-[#F8FAFC] text-[#0F172A] antialiased selection:bg-[#0284C7] selection:text-white">
-    <div id="root"></div>
+  <body class="bg-[#FAF8F5] text-[#0F172A] antialiased selection:bg-[#0284C7] selection:text-white">
+    <div id="root">
+      <!-- Fallback container if JavaScript is initializing or uncompiled source is served -->
+      <div id="pmy-fallback" style="min-height:100vh;display:flex;align-items:center;justify-content:center;background-color:#FAF8F5;font-family:'Plus Jakarta Sans',sans-serif;padding:24px;">
+        <div style="max-width:540px;width:100%;background:#ffffff;border:1px solid #E2E8F0;border-radius:16px;padding:36px;box-shadow:0 4px 12px rgba(15,41,74,0.06);text-align:center;">
+          <div style="display:inline-block;padding:8px 16px;background:#0F294A;color:#F6C445;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;border-radius:4px;margin-bottom:16px;">
+            Dakar · Yoff · ONECS
+          </div>
+          <h1 style="font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:#0F294A;margin:0 0 12px 0;">
+            Groupe Scolaire Présentation de Marie
+          </h1>
+          <p style="font-size:14px;color:#475569;margin:0 0 20px 0;line-height:1.6;">
+            Crèche · Maternelle · École Élémentaire (CP au CM2)
+          </p>
+          <div style="display:flex;align-items:center;justify-content:center;gap:10px;color:#0F294A;font-size:13px;font-weight:600;">
+            <span style="display:inline-block;width:12px;height:12px;border:2px solid #0F294A;border-top-color:transparent;border-radius:50%;animation:pmy-spin 1s linear infinite;"></span>
+            <span>Chargement du site en cours...</span>
+          </div>
+          <div id="gh-pages-tip" style="display:none;margin-top:24px;padding:16px;background:#FEF3C7;border:1px solid #F59E0B;border-radius:8px;text-align:left;font-size:12px;color:#92400E;line-height:1.5;">
+            <strong>Avis Déploiement GitHub Pages :</strong><br/>
+            Si cette page reste affichée, votre dépôt GitHub Pages est configuré pour servir le code source non compilé.
+            <ol style="margin:8px 0 0 16px;padding:0;">
+              <li>Allez dans votre dépôt GitHub : <strong>Settings &gt; Pages</strong></li>
+              <li>Sous <strong>Build and deployment &gt; Source</strong>, choisissez <strong>GitHub Actions</strong> (au lieu de <em>Deploy from a branch</em>).</li>
+              <li>L'action automatique compilera le site et affichera l'interface complète sans écran blanc.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      <style>
+        @keyframes pmy-spin { to { transform: rotate(360deg); } }
+      </style>
+      <script>
+        setTimeout(function() {
+          var tip = document.getElementById('gh-pages-tip');
+          if (tip && document.getElementById('pmy-fallback')) {
+            tip.style.display = 'block';
+          }
+        }, 3500);
+      </script>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

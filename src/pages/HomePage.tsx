@@ -1,6 +1,7 @@
 import React from 'react';
 import { Hero } from '../components/Hero';
 import { CampusVisualBanner } from '../components/CampusVisualBanner';
+import { HomeResourcesSection } from '../components/HomeResourcesSection';
 import { PageId } from '../components/Header';
 import { Language, TRANSLATIONS } from '../data/translations';
 import { 
@@ -14,7 +15,8 @@ import {
   Calculator, 
   Clock, 
   MapPin,
-  CheckCircle2
+  CheckCircle2,
+  FileDown
 } from 'lucide-react';
 
 interface HomePageProps {
@@ -69,11 +71,9 @@ export const HomePage: React.FC<HomePageProps> = ({
       {/* 3. Mot de Bienvenue de la Directrice & Direction */}
       <section className="py-14 bg-[#FAF8F5] border-b border-stone-200">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white border border-stone-200 rounded-2xl p-8 sm:p-12 shadow-sm relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-amber-400/10 rounded-full translate-x-12 -translate-y-12 pointer-events-none" />
-            
+          <div className="bg-white border border-stone-200 rounded-xl p-8 sm:p-12 shadow-xs relative overflow-hidden">
             <div className="relative z-10">
-              <span className="text-xs font-mono font-bold uppercase tracking-widest text-amber-700 block mb-2">
+              <span className="text-xs font-mono font-bold uppercase tracking-widest text-amber-800 block mb-2">
                 {t.directress.tag}
               </span>
               <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#0F294A] mb-4">
@@ -114,8 +114,8 @@ export const HomePage: React.FC<HomePageProps> = ({
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Pilier 1 */}
-            <div className="p-8 bg-[#FAF8F5] rounded-2xl border border-stone-200 hover:border-stone-300 transition-all space-y-4">
-              <div className="w-12 h-12 rounded-xl bg-blue-100 text-[#0F294A] flex items-center justify-center font-bold">
+            <div className="p-8 bg-[#FAF8F5] rounded-xl border border-stone-200 hover:border-stone-300 transition-all space-y-4 text-left">
+              <div className="w-12 h-12 rounded-lg bg-blue-100 text-[#0F294A] flex items-center justify-center font-bold">
                 <GraduationCap className="w-6 h-6" />
               </div>
               <h3 className="font-serif text-xl font-bold text-[#0F294A]">
@@ -127,8 +127,8 @@ export const HomePage: React.FC<HomePageProps> = ({
             </div>
 
             {/* Pilier 2 */}
-            <div className="p-8 bg-[#FAF8F5] rounded-2xl border border-stone-200 hover:border-stone-300 transition-all space-y-4">
-              <div className="w-12 h-12 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center font-bold">
+            <div className="p-8 bg-[#FAF8F5] rounded-xl border border-stone-200 hover:border-stone-300 transition-all space-y-4 text-left">
+              <div className="w-12 h-12 rounded-lg bg-amber-100 text-amber-800 flex items-center justify-center font-bold">
                 <Heart className="w-6 h-6" />
               </div>
               <h3 className="font-serif text-xl font-bold text-[#0F294A]">
@@ -140,8 +140,8 @@ export const HomePage: React.FC<HomePageProps> = ({
             </div>
 
             {/* Pilier 3 */}
-            <div className="p-8 bg-[#FAF8F5] rounded-2xl border border-stone-200 hover:border-stone-300 transition-all space-y-4">
-              <div className="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold">
+            <div className="p-8 bg-[#FAF8F5] rounded-xl border border-stone-200 hover:border-stone-300 transition-all space-y-4 text-left">
+              <div className="w-12 h-12 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold">
                 <Users className="w-6 h-6" />
               </div>
               <h3 className="font-serif text-xl font-bold text-[#0F294A]">
@@ -155,7 +155,7 @@ export const HomePage: React.FC<HomePageProps> = ({
         </div>
       </section>
 
-      {/* 5. Niveaux d'Enseignement : Maternelle & Élémentaire */}
+      {/* 5. Niveaux d'Enseignement : Maternelle & Élémentaire (Strictly Primary & Preschool only) */}
       <section className="py-16 bg-[#FAF8F5] border-b border-stone-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-10">
@@ -172,7 +172,7 @@ export const HomePage: React.FC<HomePageProps> = ({
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Card Maternelle */}
-            <div className="bg-white border border-stone-200 rounded-2xl p-6 sm:p-8 space-y-4 shadow-xs">
+            <div className="bg-white border border-stone-200 rounded-xl p-6 sm:p-8 space-y-4 shadow-xs text-left">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-lg bg-pink-100 text-pink-700 flex items-center justify-center">
                   <Baby className="w-5 h-5" />
@@ -188,8 +188,8 @@ export const HomePage: React.FC<HomePageProps> = ({
               </div>
               <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
                 {lang === 'fr'
-                  ? 'Éveil au langage, découverte sensorielle, motricité fine, éveil musical et socialisation précoce. Cantine Halal et garderie surveillée jusqu\'à 16h00.'
-                  : 'Sensory discovery, language awakening, fine motor skills, and loving socialization. Halal lunch and supervised aftercare until 04:00 PM.'}
+                  ? 'Éveil au langage, découverte sensorielle, motricité fine, éveil musical et socialisation précoce. Cantine 100% Halal préparée sur place et garderie surveillée jusqu\'à 16h00.'
+                  : 'Sensory discovery, language awakening, fine motor skills, and loving socialization. 100% Halal lunch cooked on campus and supervised aftercare until 04:00 PM.'}
               </p>
               <div className="pt-2">
                 <button
@@ -203,7 +203,7 @@ export const HomePage: React.FC<HomePageProps> = ({
             </div>
 
             {/* Card Élémentaire */}
-            <div className="bg-white border border-stone-200 rounded-2xl p-6 sm:p-8 space-y-4 shadow-xs">
+            <div className="bg-white border border-stone-200 rounded-xl p-6 sm:p-8 space-y-4 shadow-xs text-left">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-lg bg-sky-100 text-sky-800 flex items-center justify-center">
                   <BookOpen className="w-5 h-5" />
@@ -219,8 +219,8 @@ export const HomePage: React.FC<HomePageProps> = ({
               </div>
               <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
                 {lang === 'fr'
-                  ? 'Maîtrise approfondie du Français et des Mathématiques par l\'Approche Par Compétences (APC), cours d\'anglais et d\'informatique dès le CI, et études dirigées.'
-                  : 'Deep mastery of French and Mathematics through the Competency-Based Approach, early English and Computer classes, and supervised study.'}
+                  ? 'Maîtrise approfondie du Français et des Mathématiques par l\'Approche Par Compétences (APC), cours d\'anglais et d\'informatique dès le CI, et études dirigées du soir.'
+                  : 'Deep mastery of French and Mathematics through the Competency-Based Approach, early English and Computer classes, and supervised evening study.'}
               </p>
               <div className="pt-2">
                 <button
@@ -236,10 +236,13 @@ export const HomePage: React.FC<HomePageProps> = ({
         </div>
       </section>
 
-      {/* 6. Streamlined Admissions & Tuition Teaser (Fee Calculator moved to AdmissionsPage) */}
+      {/* 6. EXPANDED RESOURCES & DOWNLOADS SECTION (New: Detailed lists, Schoolmatik, Calendar, CFEE, Canteen) */}
+      <HomeResourcesSection lang={lang} />
+
+      {/* 7. Streamlined Admissions & Tuition Teaser (Fee Calculator moved to AdmissionsPage) */}
       <section className="py-14 bg-white border-b border-stone-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-br from-[#0A1626] to-[#122A48] text-white rounded-2xl p-8 sm:p-12 shadow-md relative overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-8">
+          <div className="bg-gradient-to-br from-[#0A1626] to-[#122A48] text-white rounded-xl p-8 sm:p-12 shadow-md relative overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-8">
             <div className="space-y-3 max-w-2xl text-left">
               <span className="text-xs font-mono font-bold uppercase tracking-wider text-amber-300">
                 {t.homeAdmissionsTeaser.tag}
@@ -269,7 +272,7 @@ export const HomePage: React.FC<HomePageProps> = ({
             <div className="shrink-0 flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
               <button
                 onClick={() => onNavigateTo('admissions')}
-                className="px-6 py-4 bg-amber-400 hover:bg-amber-300 active:bg-amber-500 text-[#0F294A] font-bold text-xs sm:text-sm rounded-lg transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer whitespace-nowrap"
+                className="px-6 py-4 bg-amber-400 hover:bg-amber-300 active:bg-amber-500 text-[#0F294A] font-bold text-xs sm:text-sm rounded-md transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer whitespace-nowrap"
               >
                 <Calculator className="w-4 h-4" />
                 <span>{t.homeAdmissionsTeaser.btnCalculator}</span>
@@ -280,7 +283,7 @@ export const HomePage: React.FC<HomePageProps> = ({
         </div>
       </section>
 
-      {/* 7. Bottom Fast Contact & Location Bar */}
+      {/* 8. Bottom Fast Contact & Location Bar */}
       <section className="py-12 bg-[#FAF8F5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left">

@@ -176,9 +176,9 @@ export const DocumentsDownloads: React.FC = () => {
                     <div className="text-[11px] text-stone-500">Charte de discipline, horaires et retards (PDF)</div>
                   </div>
                   <button
-                    onClick={() => alert("Téléchargement du Règlement Intérieur (Édition 2026–2027) démarré.")}
-                    className="p-2 text-[#0F294A] hover:bg-white rounded-md border border-transparent hover:border-stone-300 transition-colors"
-                    title="Télécharger"
+                    onClick={() => window.print()}
+                    className="p-2 text-[#0F294A] hover:bg-white rounded-md border border-transparent hover:border-stone-300 transition-colors cursor-pointer"
+                    title="Imprimer / Télécharger"
                   >
                     <Download className="w-4 h-4" />
                   </button>
@@ -187,12 +187,12 @@ export const DocumentsDownloads: React.FC = () => {
                 <div className="p-3.5 rounded-lg border border-stone-200 bg-[#FAF8F5] flex items-center justify-between">
                   <div>
                     <div className="text-xs font-bold text-stone-800">Code de la Tenue & Uniforme Scolaire</div>
-                    <div className="text-[11px] text-stone-500">Directives vestimentaires du primaire au lycée</div>
+                    <div className="text-[11px] text-stone-500">Directives vestimentaires de la maternelle à l'élémentaire</div>
                   </div>
                   <button
-                    onClick={() => alert("Téléchargement du Guide de la Tenue Réglementaire démarré.")}
-                    className="p-2 text-[#0F294A] hover:bg-white rounded-md border border-transparent hover:border-stone-300 transition-colors"
-                    title="Télécharger"
+                    onClick={() => window.print()}
+                    className="p-2 text-[#0F294A] hover:bg-white rounded-md border border-transparent hover:border-stone-300 transition-colors cursor-pointer"
+                    title="Imprimer / Télécharger"
                   >
                     <Download className="w-4 h-4" />
                   </button>
@@ -201,12 +201,12 @@ export const DocumentsDownloads: React.FC = () => {
                 <div className="p-3.5 rounded-lg border border-stone-200 bg-[#FAF8F5] flex items-center justify-between">
                   <div>
                     <div className="text-xs font-bold text-stone-800">Listes des Fournitures par Niveau</div>
-                    <div className="text-[11px] text-stone-500">Manuels, cahiers et matériel pédagogique 2026</div>
+                    <div className="text-[11px] text-stone-500">Manuels, cahiers et matériel pédagogique 2026–2027</div>
                   </div>
                   <button
-                    onClick={() => alert("Téléchargement de la Liste des Fournitures 2026-2027 démarré.")}
-                    className="p-2 text-[#0F294A] hover:bg-white rounded-md border border-transparent hover:border-stone-300 transition-colors"
-                    title="Télécharger"
+                    onClick={() => window.print()}
+                    className="p-2 text-[#0F294A] hover:bg-white rounded-md border border-transparent hover:border-stone-300 transition-colors cursor-pointer"
+                    title="Imprimer / Télécharger"
                   >
                     <Download className="w-4 h-4" />
                   </button>

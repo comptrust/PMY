@@ -135,14 +135,14 @@ export const Hero: React.FC<HeroProps> = ({
             {/* Left Content */}
             <div className="lg:col-span-8 space-y-6 text-left">
               
-              {/* Badge */}
-              <div className="inline-flex flex-wrap items-center gap-2.5 bg-white/10 backdrop-blur-md border border-white/20 px-3.5 py-1.5 rounded-full text-xs text-stone-200">
+              {/* Institutional Header Tag */}
+              <div className="inline-flex flex-wrap items-center gap-2.5 bg-[#0B1E38]/90 backdrop-blur-md border border-amber-400/40 px-3.5 py-1.5 rounded-sm text-xs text-stone-200 shadow-xs">
                 <SchoolLogo variant="seal" size="sm" showText={false} className="shrink-0 -my-2 -ml-2 scale-75" />
-                <span className="font-semibold tracking-wider uppercase text-amber-300 text-[11px] sm:text-xs">
+                <span className="font-mono font-bold tracking-wider uppercase text-amber-300 text-[11px] sm:text-xs">
                   {lang === 'fr' ? current.badgeFr : current.badgeEn}
                 </span>
-                <span className="text-white/40 hidden sm:inline" aria-hidden="true">·</span>
-                <span className="text-stone-300 hidden sm:inline">Dakar · Yoff</span>
+                <span className="text-white/40 hidden sm:inline" aria-hidden="true">|</span>
+                <span className="text-stone-300 font-mono text-[11px] hidden sm:inline">Dakar · Yoff</span>
               </div>
 
               {/* Title */}
@@ -217,7 +217,7 @@ export const Hero: React.FC<HeroProps> = ({
                 
                 <div className="flex items-center justify-between pb-3 border-b border-white/10">
                   <div className="flex items-center gap-2">
-                    <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                    <span className="inline-block w-2 h-2 rounded-xs bg-emerald-400" />
                     <span className="text-[11px] font-mono tracking-widest text-amber-300 font-bold uppercase">
                       {lang === 'fr' ? 'Campus de Yoff en Direct' : 'Live Yoff Campus'}
                     </span>
